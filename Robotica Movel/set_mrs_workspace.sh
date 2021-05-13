@@ -42,9 +42,9 @@ ln -sf ~/git/simulation
 
 cd $WORKSPACE_PATH
 source /opt/ros/$ROS_DISTRO/setup.bash
-[ -z "$GITHUB_CI" ] && command catkin build mavros -j2 -c --mem-limit 50%
+[ -z "$GITHUB_CI" ] && command catkin build mavros -j1 -c --mem-limit 50%
 [ ! -z "$GITHUB_CI" ] && command catkin build mavros --limit-status-rate 0.2 --summarize
-[ -z "$GITHUB_CI" ] && command catkin build -j2 -c --mem-limit 50%
+[ -z "$GITHUB_CI" ] && command catkin build -j1 -c --mem-limit 50%
 [ ! -z "$GITHUB_CI" ] && command catkin build --limit-status-rate 0.2 --summarize
 
 num=`cat ~/.bashrc | grep "$WORKSPACE_PATH" | wc -l`
