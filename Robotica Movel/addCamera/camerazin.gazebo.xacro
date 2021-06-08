@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+
+<!-- This file contains plugins to simulate an Imu sensor attached to the robot. -->
+<!-- Documentation can be found at http://wiki.ros.org/hector_gazebo_plugins -->
+
+<robot name="smb" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="CAM" params="base_link simulation">
+    <xacro:property name="cameraSize" value="0.05"/>
+    <xacro:property name="cameraMass" value="0.1"/>
+
+    <xacro:property name="camera_base_link"		value="${base_link}"/>
+    <xacro:property name="camera_origin_rpy"		value="0 0 0"/>
+    <xacro:property name="camera_origin_xyz"		value="0.27 0.0 0.34"/>
+
+    <xacro:property name="camera_update_rate"		value="400"/>
+    <xacro:property name="camera_link"  			value="camera_link"/>
+
+    <xacro:if value="${simulation}">
+      <gazebo reference="camera_link">
+        <sensor type="camera" name="camera1">
+          <update_rate>30.0</update_rate>
+          <camera name="head">
+            <horizontal_fov>1.3962634</horizontal_fov>
+            <image>
+              <width>800</width>
+              <height>800</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.02</near>
+              <far>300</far>
+            </clip>
+            <noise>
+              <type>gaussian</type>
+              <mean>0.0</mean>
+              <stddev>0.007</stddev>
+            </noise>
+          </camera>
+          <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+            <alwaysOn>true</alwaysOn>
+            <updateRate>0.0</updateRate>
+            <cameraName>smb/camera</cameraName>
+            <imageTopicName>image_raw</imageTopicName>
+            <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+            <frameName>camera_link</frameName>
+            <hackBaseline>0.07</hackBaseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+          </plugin>
+        </sensor>
+      </gazebo>
+    </xacro:if>
+
+    <joint name="camera_joint" type="fixed">
+      <origin xyz="${camera_origin_xyz}" rpy="${camera_origin_rpy}"/>
+      <parent link="${camera_base_link}"/>
+      <child link="${camera_link}"/>
+    </joint>
+
+    <link name="${camera_link}">
+      <inertial>
+        <mass value="0.001"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.0001"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+        <box size="0.04 0.05 0.02"/>
+      </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <box size=".001 .001 .001"/>
+        </geometry>
+      </collision>
+      <material name="orange">
+        <color rgba="255 108 10 255"/>
+      </material>
+    </link>
+
+    <gazebo reference="${camera_link}">
+      <material>Gazebo/Orange</material>
+    </gazebo>
+
+    <gazebo reference="camera_joint">
+      <disableFixedJointLumping>true</disableFixedJointLumping>
+    </gazebo>
+
+  </xacro:macro> 
+</robot> 
