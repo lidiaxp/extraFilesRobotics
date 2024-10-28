@@ -11,10 +11,6 @@ repositories:
     type: git
     url: https://github.com/ETHZ-RobotX/smb_powerstatus.git
     version: main
-  lib/gtsam_catkin:
-    type: git
-    url: https://github.com/leggedrobotics/gtsam_catkin
-    version: main
   lib/ocs2:
     type: git
     url: https://github.com/IoannisDadiotis/ocs2.git
