@@ -51,10 +51,6 @@ repositories:
     type: git
     url: https://github.com/ETHZ-RobotX/far_planner.git
     version: melodic-noetic
-  slam/open3d_slam:
-    type: git
-    url: https://github.com/ETHZ-RobotX/open3d_slam_advanced_rss_2024_public.git
-    version: main
   ui/smb_rviz_plugins:
     type: git
     url: https://github.com/ETHZ-RobotX/smb_rviz_plugins.git
