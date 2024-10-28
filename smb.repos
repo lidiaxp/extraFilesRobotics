@@ -1,0 +1,124 @@
+repositories:
+  core:
+    type: git
+    url: https://github.com/ETHZ-RobotX/smb_common.git
+    version: master
+  hardware/robosense_simulator:
+    type: git
+    url: https://github.com/tomlogan501/robosense_simulator.git
+    version: main
+  hardware/smb_powerstatus:
+    type: git
+    url: https://github.com/ETHZ-RobotX/smb_powerstatus.git
+    version: main
+  lib/gtsam_catkin:
+    type: git
+    url: https://github.com/leggedrobotics/gtsam_catkin
+    version: main
+  lib/ocs2:
+    type: git
+    url: https://github.com/IoannisDadiotis/ocs2.git
+    version: robotx_school2024
+  lib/libnabo:
+    type: git
+    url: https://github.com/ANYbotics/libnabo.git
+    version: master
+  misc/catkin_simple:
+    type: git
+    url: https://github.com/catkin/catkin_simple.git
+    version: master
+  misc/glog_catkin:
+    type: git
+    url: https://github.com/ethz-asl/glog_catkin.git
+    version: master
+  planning/follow_waypoints:
+    type: git
+    url: https://github.com/ETHZ-RobotX/follow_waypoints.git
+    version: master
+  planning/smb_mission_planner:
+    type: git
+    url: https://github.com/ETHZ-RobotX/smb_mission_planner.git
+    version: master
+  planning/smb_path_planner:
+    type: git
+    url: https://github.com/ETHZ-RobotX/smb_path_planner.git
+    version: master 
+  planning/teb_local_planner:
+    type: git
+    url: https://github.com/leggedrobotics/teb_local_planner.git
+    version: feature/correct_local_plan_timestamps
+  planning/autonomous_exploration_development_environment:
+    type: git
+    url: https://github.com/ETHZ-RobotX/autonomous_exploration_development_environment.git
+    version: noetic
+  planning/far_planner:
+    type: git
+    url: https://github.com/ETHZ-RobotX/far_planner.git
+    version: melodic-noetic
+  slam/open3d_slam:
+    type: git
+    url: https://github.com/ETHZ-RobotX/open3d_slam_advanced_rss_2024_public.git
+    version: main
+  ui/smb_rviz_plugins:
+    type: git
+    url: https://github.com/ETHZ-RobotX/smb_rviz_plugins.git
+    version: master
+  object_detection:
+    type: git
+    url: https://github.com/ETHZ-RobotX/smb_object_detection.git
+    version: main
+# EXPLORATION MISC
+  misc/eigen_catkin:
+    type: git
+    url: https://github.com/ethz-asl/eigen_catkin.git
+    version: 00b5eb254bad8de9cd68d238aa994e443062cf30
+  misc/eigen_checks:
+    type: git
+    url: https://github.com/ethz-asl/eigen_checks.git
+    version: 22a6247a3df11bc285d43d1a030f4e874a413997
+  misc/gflags_catkin:
+    type: git
+    url: https://github.com/ethz-asl/gflags_catkin.git
+    version: 5324e74119996a6e2da12d20e5388c17480ebd79
+  misc/minkindr:
+    type: git
+    url: https://github.com/ethz-asl/minkindr.git
+    version: bc4503c34970a13b7ef06f62505e3333395ce02c
+  misc/minkindr_ros:
+    type: git
+    url: https://github.com/ethz-asl/minkindr_ros.git
+    version: 88e0bd476f82027453f04fdf7c40c7c9a358aa1b
+  misc/mav_comm:
+    type: git
+    url: https://github.com/ethz-asl/mav_comm.git
+    version: master
+  misc/yaml_cpp_catkin:
+    type: git
+    url: https://github.com/ethz-asl/yaml_cpp_catkin.git
+    version: master
+# EXPLORATION MAPPING
+  mapping/voxblox:
+    type: git
+    url: https://github.com/ntnu-arl/voxblox.git
+    version: dev/noetic
+# EXPLORATION
+  exploration/gbplanner_ros:
+    type: git
+    url: https://github.com/ETHZ-RobotX/gbplanner_ros.git
+    version: gbplanner2
+  exploration/pci_general:
+    type: git
+    url: https://github.com/ntnu-arl/pci_general.git
+    version: main
+  exploration/adaptive_obb_ros:
+    type: git
+    url: https://github.com/ntnu-arl/adaptive_obb_ros.git
+    version: master
+  exploration/m-explore:
+    type: git
+    url: https://github.com/hrnr/m-explore.git
+    version: noetic-devel
+  exploration/tare_planner:
+    type: git
+    url: https://github.com/ETHZ-RobotX/tare_planner.git
+    version: rss2024
